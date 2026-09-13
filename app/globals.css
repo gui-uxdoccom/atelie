@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+html, body {
+  background: #F5EDE3;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* safe-area padding for the sticky bars once installed standalone */
+.pb-safe { padding-bottom: max(1.75rem, env(safe-area-inset-bottom)); }
+.pt-safe { padding-top: max(3.5rem, env(safe-area-inset-top)); }

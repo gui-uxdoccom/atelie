@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: atelie
+    runtime: node
+    plan: starter          # NOT free — free spins down and the first tap waits 30-60s
+    region: frankfurt      # closest to Dubai/Riyadh of Render's regions
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: REPLICATE_API_TOKEN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: APP_SHARED_SECRET
+        sync: false
+      - key: LOGO_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
